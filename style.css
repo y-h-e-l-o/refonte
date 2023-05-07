@@ -1,26 +1,43 @@
+@font-face {
+font-family:"pynion";
+src: url("Redaction-Italic.otf");
+}
+
 body{
+height: 100%;
+display: flex;
+flex-direction: row;
 font-size: 0.9em;
-font-family : Verdana, Verdana, Geneva, sans-serif;
-background-image : url(fond.png);
+overflow: hidden;
+font-family :Verdana, Verdana, Geneva, sans-serif;
+background-image : url(carreauu.jpg);
+background-repeat: repeat;
+background-size: 300%;
 }
 
 .titre{
 position: relative;
-z-index: 1;
+z-index: 10;
 padding:10px;
 top: 0px;
 width: 100%;
+color: white;
 margin-left: -10px;
 letter-spacing: 0.2rem;
 position: fixed;
 text-align: justify;
 text-justify: distribute;
-background: #1D995B;
+background: url(carro2.jpg);
+background-size: 90%;
+background-repeat: space around;
+}
+.titre>a:hover{
+background-color:yellow;
 }
 
 #frise{
 		--jour:5vh;
-		width: 45%;
+		/*width: 45%;*/
 	}
 #frise>div{
 		display:flex;
@@ -34,50 +51,60 @@ background: #1D995B;
 		align-items: start;
 	}
 #frise>div>:first-child {
-		font-size: 1.3em;
-		font-family: cursive;
+		font-size: 1.1em;
 		margin-right: 50px;
+		color: white;
+		background: black;
+		font-family : pynion;
 	}
 #frise button{
 		padding: 15px;
-		border-radius: 20px;
-		border: #EDEDED inset 3px;
+	border: none;
 		max-width:300px;
 	}
 #frise>div:nth-child(2n)>:last-child{
 margin-left: 150px;
 }
+button>strong{
+background: white;
+}
+button>strong:hover{
+background: yellow;
+}
+button{
+border: 3px solid black;
+background: none;
+}
 .corps{
 width: 100vw;
-height: 85vh;
+height: 90vh;
 top: 10vh;
 margin-left: 4vw;
-position: absolute;
-display: flex;
-flex-direction: row;
+position: relative;
+max-width: 40%;
+min-width: 20%;
 align-items : flex-start;
 overflow: scroll;
 z-index: 2;
 }
 
 .contenu{
-position: fixed;
-left: 56vw;
+position: relative;
+display: flex;
+max-width: 60%;
+min-width: 20%;
 margin: auto;
-top: 10vh;
+top: 5vh;
 z-index: 2;
 }
 .contenu img{
 display : none; 
-width: 120%;
+width: 100%;
 margin: auto;
 overflow: scroll;
 border: black ;
 }
-.droite{
-height: 10%;
 
-}
 .debut{
 display : block;
 }
@@ -85,42 +112,45 @@ display : block;
 .contenu p{
 background: white;
 overflow: scroll;
-max-width: 35vw;
-box-shadow: 0px 0px 40px 50px white;
-padding: 30px;
+max-width: 55vw;
+padding: 100px;
 display: none;
 width: 100%;
-height: 100vh;
+height: 80vh;
 }
 
 @media screen and (max-width: 1000px) and (min-height:1000px){
 .titre{
 font-size: 2rem;
 }
-#frise{
-width: 80%;
-
+body{
+flex-direction: column;
 }
+
 #frise button{
 max-width: 1000px;
 font-size: 1em;
 }
 .corps{
 font-size: 2rem;
-height: 50%;
+max-width: 100%;
+max-height: 30%;
+height:40vh;
 }
 .contenu{
-top: 55%;
 margin: auto;
-width: 100%;
 left: 0px;
-
+max-width: 100%;
+min-height: 60%;
 margin: 20px;
+z-index: 20;
 }
-
+.contenu img{
+display: block;
+}
 .contenu p{
 font-size: 2em;
 max-width: 100%;
-height: 36vh;
+height: 70vh;
 }
 }
